@@ -1,0 +1,63 @@
+// Mixin pour appliquer une ombre portée
+@mixin box-shadow {
+  box-shadow: 0px 6px 13px 0px #bebebe;
+}
+
+// Mixin pour les styles de base des boutons
+@mixin button {
+  color: $color-white; // Couleur du texte
+  background-image: linear-gradient(to top, $color-primary, $color-secondary); // Dégradé de fond
+  font-size: 1rem; // Taille de la police
+  border: none; // Pas de bordure
+  padding: 1rem 2rem; // Espacement intérieur
+  border-radius: 2rem; // Bordures arrondies
+  margin-left: 15%; // Marge gauche
+  margin-right: 15%; // Marge droite
+  transition: all 0.2s; // Animation de transition
+}
+
+// Mixin pour les styles de survol généraux
+@mixin hover {
+  transform: scale(1.05); // Mise à l'échelle
+  opacity: 0.9; // Opacité réduite
+  cursor: pointer; // Curseur pointer
+}
+
+// Mixin pour les styles de survol des boutons
+@mixin hover-button {
+  opacity: 0.8; // Opacité réduite
+  cursor: pointer; // Curseur pointer
+  box-shadow: 0px 6px 13px 0px #4d4c4c; // Autre ombre portée
+}
+
+// Mixin pour définir les dimensions et les styles des cartes
+@mixin cards-size {
+  height: 75%; // Hauteur
+  width: 100%; // Largeur
+  border-radius: 20px 20px 0px 0px; // Bordures arrondies spécifiques
+  background-size: cover; // Taille du fond couvrant
+  background-position: center; // Position du fond au centre
+}
+
+// Mixin pour ajouter une bordure inférieure
+@mixin underline {
+  & > span {
+    border-bottom: 3px solid $color-tertiary; // Bordure inférieure
+  }
+}
+
+// Mixin pour créer un effet de cœur lors du survol
+@mixin heart {
+  .fas {
+    opacity: 0; // Opacité initiale
+    color: transparent; // Couleur transparente
+    background-image: linear-gradient(to bottom, $color-primary, $color-secondary); // Dégradé de fond
+    background-clip: text; // Clip sur le texte
+    -webkit-background-clip: text; // Clip sur le texte pour les navigateurs WebKit
+    transition: all 200ms ease-in-out; // Animation de transition
+    &:hover {
+      opacity: 1; // Opacité totale lors du survol
+      transform: scale(1.1); // Mise à l'échelle légèrement augmentée lors du survol
+    }
+  }
+}

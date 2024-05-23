@@ -1,0 +1,43 @@
+// Styles généraux pour les titres
+.title {
+  font-family: "Shrikhand", cursive; // Police Shrikhand pour le titre
+  font-size: 2rem; // Taille de la police
+  text-align: center; // Centre le texte
+  padding: 0.3rem; // Ajoute un léger remplissage
+  box-shadow: 0 0 0.5rem rgb(92, 92, 92); // Ombre portée
+  margin: 0; // Supprime les marges extérieures
+  margin-bottom: 3px; // Ajoute une petite marge inférieure
+}
+
+// Styles pour les éléments avec la classe "city"
+.city {
+  // Styles communs pour les éléments enfants de ".city"
+  &,
+  & .paname {
+    // Définit la couleur de fond
+    background-color: #e3e3e3;
+  }
+  
+  // Ajoute un remplissage intérieur
+  padding: 1rem;
+  
+  // Utilise flexbox pour organiser les éléments enfants
+  display: flex;
+  justify-content: center; // Centre les éléments horizontalement
+  gap: 1rem; // Espacement entre les éléments enfants
+  
+  // Styles pour les éléments ".paname" à l'intérieur de ".city"
+  .paname {
+    // Styles spécifiques pour les éléments ".paname"
+    width: 109px; // Largeur fixe
+    height: 19px; // Hauteur fixe
+    opacity: 1; // Opacité maximale
+    text-align: right; // Alignement du texte à droite
+    font-weight: bold; // Texte en gras
+    border: none; // Pas de bordure
+    font-size: 1rem; // Taille de la police
+    margin: 0; // Pas de marges
+    color: #000; // Couleur du texte
+    white-space: nowrap; // Empêche le texte de se diviser sur plusieurs lignes
+  }
+}

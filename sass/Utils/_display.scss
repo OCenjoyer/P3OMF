@@ -1,0 +1,32 @@
+// Styles pour l'élément avec la classe "display"
+.display {
+  // Styles pour la première variation de l'élément
+  &_one {
+    opacity: 1; // Opacité initiale à 1
+    animation: display 0.9s forwards ease-in-out; // Animation de "display" pendant 0.9s
+  }
+  // Styles pour la deuxième variation de l'élément
+  &_two {
+    opacity: 1; // Opacité initiale à 1
+    animation: display 1.2s forwards ease-in-out; // Animation de "display" pendant 1.2s
+  }
+  // Styles pour la troisième variation de l'élément
+  &_three {
+    opacity: 1; // Opacité initiale à 1
+    animation: display 1.5s forwards ease-in-out; // Animation de "display" pendant 1.5s
+  }
+}
+
+// Définition de l'animation "display" avec des keyframes
+@keyframes display {
+  // État initial de l'animation
+  0% {
+    opacity: 0%; // Opacité à 0%
+    transform: translateY(30px); // Translation vers le bas de 30px
+  }
+  // État final de l'animation
+  100% {
+    opacity: 100%; // Opacité à 100%
+    transform: translateY(0px); // Aucune translation verticale
+  }
+}

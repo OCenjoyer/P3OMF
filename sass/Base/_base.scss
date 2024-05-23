@@ -1,0 +1,19 @@
+// Import de la police de Google Fonts Roboto avec différents poids et de la police Shrikhand
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&family=Shrikhand&display=swap');
+
+// Styles pour le corps du document HTML
+body {
+  margin: 0; // Supprime les marges par défaut du corps
+  font-family: 'Roboto', sans-serif; // Utilise la police Roboto comme police par défaut, avec fallback sur la police sans-serif
+}
+
+// Classe pour ajouter des marges à gauche et à droite de 5%
+.marge {
+  margin-left: 5%; // Marge à gauche de 5%
+  margin-right: 5%; // Marge à droite de 5%
+}
+
+// Styles pour les liens hypertextes
+a {
+  text-decoration: none; // Supprime la soulignement par défaut des liens hypertextes
+}

@@ -1,0 +1,66 @@
+// Styles pour le fonctionnement de certains éléments
+.fonctionnement {
+  counter-reset: compteur; // Réinitialise le compteur
+  
+  // Styles pour les listes ordonnées à l'intérieur de ".fonctionnement"
+  & ol {
+    display: flex; // Affichage en flexbox
+    gap: 2rem; // Espacement entre les éléments
+    padding-left: 1rem; // Ajoute un décalage à gauche
+    
+    // Média query pour les écrans de taille inférieure à 994px
+    @media (max-width: 994px) {
+      flex-direction: column; // Change la direction en colonne
+    }
+  }
+  
+  // Styles pour les éléments de liste à l'intérieur de ".fonctionnement"
+  & li {
+    position: relative; // Positionnement relatif pour l'utilisation de position absolue dans le pseudo-élément
+    background-color: $color-grey; // Couleur de fond grise
+    padding: 1.5rem 2rem; // Remplissage intérieur
+    border-radius: 1rem; // Bord arrondi
+    font-weight: bold; // Police en gras
+    list-style-type: none; // Supprime les puces de liste
+    
+    // Inclut une ombre portée définie ailleurs
+    @include box-shadow;
+    
+    // Pseudo-élément ::before pour afficher le numéro de la liste
+    &::before {
+      position: absolute; // Positionnement absolu par rapport à l'élément parent
+      counter-increment: compteur; // Incrémente le compteur
+      content: counter(compteur); // Affiche le numéro de compteur
+      color: $color-white; // Couleur du texte
+      background-color: $color-primary; // Couleur de fond principale
+      display: grid; // Affichage en grille pour centrer le contenu
+      place-items: center; // Centre le contenu horizontalement et verticalement
+      width: 2 * $base-size; // Largeur
+      height: 2 * $base-size; // Hauteur
+      border-radius: 50%; // Bordure arrondie pour créer un cercle
+      bottom: $base-size; // Position en bas
+      left: -$base-size; // Position à gauche pour chevaucher le conteneur parent
+    }
+    
+    // Styles au survol de l'élément
+    &:hover {
+      background-color: $color-cell; // Changement de couleur de fond au survol
+      i {
+        color: $color-primary; // Changement de couleur de l'icône au survol
+        opacity: 1; // Opacité complète
+      }
+    }
+    
+    // Média query pour les écrans de taille supérieure ou égale à 994px
+    @media (min-width: 994px) {
+      width: 100%; // Largeur à 100% pour occuper tout l'espace disponible
+      margin-right: 5%; // Marge de droite pour l'espacement entre les éléments
+    }
+    
+    // Styles pour les icônes à l'intérieur des éléments de liste
+    & i {
+      margin-right: 1rem; // Marge à droite pour l'espacement avec le texte
+      opacity: 0.5; // Opacité à 0.5 par défaut
+    }
+  }
+}

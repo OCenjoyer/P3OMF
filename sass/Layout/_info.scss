@@ -1,0 +1,31 @@
+@import "../Utils/variables"; // Importe un fichier de variables contenant des couleurs, des tailles de police, etc.
+@import "../Utils/mixins"; // Importe un fichier de mixins contenant des règles réutilisables
+
+.info {
+  display: flex; // Utilise Flexbox pour aligner les éléments enfants
+  text-align: center; // Centre le texte horizontalement
+  flex-direction: column; // Arrange les éléments enfants en colonne
+  background-color: $color-grey; // Utilise la variable $color-grey pour définir la couleur de fond
+  padding-bottom: 4rem; // Ajoute un espacement en bas de 4 rem
+  & h1 { // Sélectionne les balises h1 à l'intérieur de .info
+    margin-top: 2rem; // Ajoute un espacement en haut de 2 rem
+    margin-bottom: 0; // Supprime l'espacement en bas
+    font-size: 1.6rem; // Définit la taille de police à 1.6 rem
+  }
+  & p { // Sélectionne les balises p à l'intérieur de .info
+    font-size: 1rem; // Définit la taille de police à 1 rem
+    margin-left: 5%; // Ajoute une marge à gauche de 5%
+    margin-right: 5%; // Ajoute une marge à droite de 5%
+    margin-bottom: 10%; // Ajoute une marge en bas de 10%
+  }
+  & button { // Sélectionne les boutons à l'intérieur de .info
+    @include button; // Utilise la mixin button pour appliquer des styles de bouton prédéfinis
+    @include box-shadow; // Utilise la mixin box-shadow pour ajouter une ombre
+    @media (min-width: 995px) { // Applique ces règles uniquement lorsque la largeur d'écran est supérieure à 995 pixels
+      width: 25%; // Définit la largeur du bouton à 25%
+    }
+  }
+  & button:hover { // Sélectionne les boutons au survol à l'intérieur de .info
+    @include hover-button; // Utilise la mixin hover-button pour appliquer des styles au survol
+  }
+}

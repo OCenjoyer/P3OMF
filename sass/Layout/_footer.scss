@@ -1,0 +1,55 @@
+// Styles pour le pied de page
+.footer {
+  display: flex; // Utilise flexbox pour organiser les éléments enfants
+  flex-direction: column; // Organise les éléments en colonne
+  color: $color-white; // Couleur du texte
+  height: 100%; // Hauteur à 100% de la hauteur disponible
+  background-color: $color-footer; // Couleur de fond du pied de page
+  padding: 1.5rem; // Remplissage intérieur
+  
+  // Styles pour les titres de niveau 2 à l'intérieur de ".footer"
+  & h2 {
+    font-family: "Shrikhand", cursive; // Police Shrikhand
+    font-weight: unset; // Poids de police réinitialisé
+    margin: 0; // Supprime les marges extérieures
+    margin-bottom: 1rem; // Ajoute une marge inférieure
+  }
+  
+  // Styles pour les paragraphes à l'intérieur de ".footer"
+  & p {
+    margin: 0; // Supprime les marges extérieures
+    margin-left: 3%; // Ajoute une marge à gauche
+  }
+  
+  // Styles pour les liens à l'intérieur de ".footer"
+  & a {
+    text-decoration: none; // Supprime la décoration de lien par défaut
+    color: $color-white; // Couleur du texte
+    &:hover {
+      color: $color-primary; // Couleur du texte au survol
+    }
+  }
+  
+  // Styles pour la section de texte "__txt" à l'intérieur de ".footer"
+  &__txt {
+    display: flex; // Utilise flexbox pour organiser les éléments enfants
+  }
+  
+  // Styles pour la section de liens "__links" à l'intérieur de ".footer"
+  &__links {
+    margin-bottom: 1rem; // Ajoute une marge inférieure
+  }
+  
+  // Media query pour les écrans de taille supérieure ou égale à 995px
+  @media (min-width: 995px) {
+    display: flex; // Utilise flexbox pour organiser les éléments enfants
+    align-items: center; // Centre les éléments verticalement
+    
+    // Styles pour les éléments avec la classe "links" à l'intérieur de ".footer"
+    .links {
+      display: flex; // Utilise flexbox pour organiser les éléments enfants
+      justify-content: space-around; // Répartit uniformément l'espace horizontal
+      width: 100%; // Largeur à 100%
+    }
+  }
+}
