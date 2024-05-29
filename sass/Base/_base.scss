@@ -9,8 +9,7 @@ body {
 
 // Classe pour ajouter des marges à gauche et à droite de 5%
 .marge {
-  margin-left: 5%; // Marge à gauche de 5%
-  margin-right: 5%; // Marge à droite de 5%
+  margin: 0 5%; // Ajoute des marges à gauche et à droite de 5%
 }
 
 // Styles pour les liens hypertextes
