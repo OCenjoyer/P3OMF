@@ -1,0 +1,63 @@
+.loader {
+    // Positionne l'animation de chargement en plein écran
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffffc9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    // Définit l'animation loader qui dure 0,5 secondes avec une transition en douceur
+    animation: loader 0.5s ease-out;
+    animation-delay: 1.2s;
+    animation-fill-mode: both;
+  
+    // Styles pour l'élément de chargement
+    &-item {
+      // Ajoute des bordures et une taille à l'élément de chargement
+      border: 10px solid $color-grey;
+      border-top: 10px solid $color-secondary;
+      border-bottom: 10px solid $color-secondary;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+  
+      // Définit l'animation spin qui dure 1,2 secondes avec une transition linéaire
+      animation: spin 1.2s linear infinite;
+    }
+  }
+  
+  // Définit l'animation loader
+  @keyframes loader {
+    0% {
+      // Définit l'opacité à 1 au début de l'animation
+      opacity: 1;
+    }
+    50% {
+      // Définit l'opacité à 0,5 à la moitié de l'animation
+      opacity: 0.5;
+    }
+    99% {
+      // Définit l'indice de pile à 1000 à la fin de l'animation
+      z-index: 1000;
+    }
+    100% {
+      // Définit l'opacité à 0 et l'indice de pile à -1000 à la fin de l'animation
+      opacity: 0;
+      z-index: -1000;
+    }
+  }
+  
+  // Définit l'animation spin
+  @keyframes spin {
+    0% {
+      // Définit la rotation à 0 degré au début de l'animation
+      transform: rotate(0deg);
+    }
+    100% {
+      // Définit la rotation à 360 degré à la fin de l'animation
+      transform: rotate(360deg);
+    }
+  }
