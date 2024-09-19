@@ -1,66 +1,96 @@
 // Styles pour le fonctionnement de certains éléments
 .fonctionnement {
-  counter-reset: compteur; // Réinitialise le compteur
-  
+  // Réinitialise le compteur
+  counter-reset: compteur;
+
   // Styles pour les listes ordonnées à l'intérieur de ".fonctionnement"
   & ol {
-    display: flex; // Affichage en flexbox
-    gap: 2rem; // Espacement entre les éléments
-    padding-left: 1rem; // Ajoute un décalage à gauche
-    
+    // Affichage en flexbox
+    display: flex;
+    // Espacement entre les éléments
+    gap: 2rem;
+    // Ajoute un décalage à gauche
+    padding-left: 1rem;
+
     // Média query pour les écrans de taille inférieure à 994px
     @media (max-width: 994px) {
-      flex-direction: column; // Change la direction en colonne
+      // Change la direction en colonne
+      flex-direction: column;
     }
   }
-  
+
   // Styles pour les éléments de liste à l'intérieur de ".fonctionnement"
   & li {
-    position: relative; // Positionnement relatif pour l'utilisation de position absolue dans le pseudo-élément
-    background-color: $color-grey; // Couleur de fond grise
-    padding: 1.5rem 2rem; // Remplissage intérieur
-    border-radius: 1rem; // Bord arrondi
-    font-weight: bold; // Police en gras
-    list-style-type: none; // Supprime les puces de liste
-    
+    // Positionnement relatif pour l'utilisation de position absolue dans le pseudo-élément
+    position: relative;
+    // Couleur de fond grise
+    background-color: $color-grey;
+    // Remplissage intérieur
+    padding: 1.5rem 2rem;
+    // Bord arrondi
+    border-radius: 1rem;
+    // Police en gras
+    font-weight: bold;
+    // Supprime les puces de liste
+    list-style-type: none;
+
     // Inclut une ombre portée définie ailleurs
     @include box-shadow;
-    
+
     // Pseudo-élément ::before pour afficher le numéro de la liste
     &::before {
-      position: absolute; // Positionnement absolu par rapport à l'élément parent
-      counter-increment: compteur; // Incrémente le compteur
-      content: counter(compteur); // Affiche le numéro de compteur
-      color: $color-white; // Couleur du texte
-      background-color: $color-primary; // Couleur de fond principale
-      display: grid; // Affichage en grille pour centrer le contenu
-      place-items: center; // Centre le contenu horizontalement et verticalement
-      width: 2 * $base-size; // Largeur
-      height: 2 * $base-size; // Hauteur
-      border-radius: 50%; // Bordure arrondie pour créer un cercle
-      bottom: $base-size; // Position en bas
-      left: -$base-size; // Position à gauche pour chevaucher le conteneur parent
+      // Positionnement absolu par rapport à l'élément parent
+      position: absolute;
+      // Incrémente le compteur
+      counter-increment: compteur;
+      // Affiche le numéro de compteur
+      content: counter(compteur);
+      // Couleur du texte
+      color: $color-white;
+      // Couleur de fond principale
+      background-color: $color-primary;
+      // Affichage en grille pour centrer le contenu
+      display: grid;
+      // Centre le contenu horizontalement et verticalement
+      place-items: center;
+      // Largeur
+      width: 2 * $base-size;
+      // Hauteur
+      height: 2 * $base-size;
+      // Bordure arrondie pour créer un cercle
+      border-radius: 50%;
+      // Position en bas
+      bottom: $base-size;
+      // Position à gauche pour chevaucher le conteneur parent
+      left: -$base-size;
     }
-    
+
     // Styles au survol de l'élément
     &:hover {
-      background-color: $color-cell; // Changement de couleur de fond au survol
+      // Changement de couleur de fond au survol
+      background-color: $color-cell;
+      // Changement de couleur de l'icône au survol
       i {
-        color: $color-primary; // Changement de couleur de l'icône au survol
-        opacity: 1; // Opacité complète
+        color: $color-primary;
+        // Opacité complète
+        opacity: 1;
       }
     }
-    
+
     // Média query pour les écrans de taille supérieure ou égale à 994px
     @media (min-width: 994px) {
-      width: 100%; // Largeur à 100% pour occuper tout l'espace disponible
-      margin-right: 5%; // Marge de droite pour l'espacement entre les éléments
+      // Largeur à 100% pour occuper tout l'espace disponible
+      width: 100%;
+      // Marge de droite pour l'espacement entre les éléments
+      margin-right: 5%;
     }
-    
+
     // Styles pour les icônes à l'intérieur des éléments de liste
     & i {
-      margin-right: 1rem; // Marge à droite pour l'espacement avec le texte
-      opacity: 0.5; // Opacité à 0.5 par défaut
+      // Marge à droite pour l'espacement avec le texte
+      margin-right: 1rem;
+      // Opacité à 0. 5 pour afficher l'icône en demi-transparence
+      opacity: 0.5;
     }
   }
 }
