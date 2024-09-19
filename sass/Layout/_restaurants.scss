@@ -1,81 +1,186 @@
+// Styles pour les éléments avec la classe "restaurants"
 .restaurants {
+  // Définit la couleur de fond en gris
   background-color: $color-grey;
+
+  // Styles pour les éléments h2 à l'intérieur de ".restaurants"
   & h2 {
+    // Ajoute un remplissage gauche de 5%
     padding-left: 5%;
+
+    // Ajoute un remplissage supérieur de 3rem
     padding-top: 3rem;
+
+    // Définit la marge supérieure à 4rem
     margin-top: 4rem;
+
+    // Définit la marge inférieure à 1rem
     margin-bottom: 1rem;
   }
+
+  // Styles pour les éléments h3 et p à l'intérieur de ".restaurants"
   & h3,
   p {
+    // Définit la taille de la police à 1rem
     font-size: 1rem;
+
+    // Supprime les marges
     margin: 0;
   }
+
+  // Styles pour les éléments avec la classe "new" à l'intérieur de ".restaurants"
   .new {
+    // Définit la position relative
     position: relative;
+
+    // Styles pour le pseudo-élément ::before
     &::before {
+      // Définit la propriété display en flex
       display: flex;
+
+      // Centre le contenu horizontalement et verticalement
       align-items: center;
       justify-content: center;
+
+      // Définit le contenu en "Nouveau"
       content: "Nouveau";
+
+      // Définit la position absolue
       position: absolute;
+
+      // Définit la hauteur à 2rem
       height: 2rem;
+
+      // Définit la largeur à 5rem
       width: 5rem;
+
+      // Définit la couleur de fond en couleur tertiaire
       background-color: $color-tertiary;
+
+      // Définit la couleur du texte en foncé de 35% de la couleur tertiaire
       color: darken($color-tertiary, 35%);
+
+      // Définit le texte en gras
       font-weight: bold;
+
+      // Définit la position à droite de 1rem et en haut de 1rem
       right: 1rem;
       top: 1rem;
     }
   }
+
+  // Styles pour les éléments avec la classe "__cards" à l'intérieur de ".restaurants"
   &__cards {
+    // Définit la propriété display en flex
     display: flex;
+
+    // Centre le contenu horizontalement et verticalement
     align-items: center;
+
+    // Définit la direction de flex en colonne
     flex-direction: column;
+
+    // Définit l'espace entre les éléments à 1rem
     gap: 1rem;
+
+    // Ajoute un remplissage gauche et droit de 5%
     padding-left: 5%;
     padding-right: 5%;
+
+    // Ajoute un remplissage inférieur de 4rem
     padding-bottom: 4rem;
+
+    // Média query pour les écrans de plus de 994px
     @media (min-width: 994px) {
+      // Définit la direction de flex en ligne
       flex-direction: row;
+
+      // Justifie le contenu à l'espace disponible
       justify-content: space-between;
     }
   }
+
+  // Styles pour les éléments avec la classe "card"
   .card {
+    // Définit la propriété display en flex
     display: flex;
+
+    // Définit la direction de flex en colonne
     flex-direction: column;
+
+    // Définit la largeur à 100%
     width: 100%;
+
+    // Définit la hauteur à 15rem
     height: 15rem;
+
+    // Définit le rayon de bordure à 20px
     border-radius: 20px;
+
+    // Définit la couleur de fond en blanc
     background-color: $color-white;
+
+    // Définit la transition pour tous les éléments en 200ms
     transition: all 200ms;
+
+    // Applique la mixin "box-shadow" pour ajouter une ombre portée
     @include box-shadow;
 
+    // Boucle pour les éléments avec la classe "__image" et un numéro de 1 à 4
     @for $i from 1 through 4 {
       &__image#{$i} {
+        // Applique la mixin "cards-size" pour définir la taille des cartes
         @include cards-size;
+
+        // Définit l'image de fond avec l'image correspondante
         background-image: url(../../images/restaurants/image#{$i}.jpg);
       }
+
+      // Média query pour les écrans de plus de 994px
       @media (min-width: 994px) {
+        // Définit la propriété display en flex
         display: flex;
+
+        // Définit la largeur à 400px
         width: 400px;
       }
+
+      // Styles pour les éléments au survol
       &:hover {
+        // Applique la mixin "hover" pour définir les styles au survol
         @include hover;
       }
     }
+
+    // Styles pour les éléments avec la classe "__description"
     &__description {
+      // Définit la position relative
       position: relative;
+
+      // Définit la couleur du texte en noir
       color: $color-black;
+
+      // Ajoute un remplissage supérieur et inférieur de 0.5rem
       margin: 0.5rem;
+
+      // Ajoute un remplissage gauche de 1rem
       margin-left: 1rem;
     }
+
+    // Styles pour les éléments i
     i {
+      // Définit la position absolue
       position: absolute;
+
+      // Définit la taille de la police à 2rem
       font-size: 2rem;
+
+      // Définit la position à droite de 1rem et en haut de 10%
       right: 1rem;
       top: 10%;
     }
+
+    // Applique la mixin "heart" pour définir les styles du cœur
     @include heart;
   }
 }
