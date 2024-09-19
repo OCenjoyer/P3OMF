@@ -2,31 +2,44 @@
 .display {
   // Styles pour la première variation de l'élément
   &_one {
-    opacity: 1; // Opacité initiale à 1
-    animation: display 0.9s forwards ease-in-out; // Animation de "display" pendant 0.9s
+    // Définition de l'opacité initiale à 1
+    opacity: 1; 
+    // Définition de l'animation "display" pendant 0.9s avec une easing ease-in-out et forwards (l'animation se termine à la dernière frame)
+    animation: display 0.9s forwards ease-in-out; 
   }
+  
   // Styles pour la deuxième variation de l'élément
   &_two {
-    opacity: 1; // Opacité initiale à 1
-    animation: display 1.2s forwards ease-in-out; // Animation de "display" pendant 1.2s
+    // Définition de l'opacité initiale à 1
+    opacity: 1; 
+    // Définition de l'animation "display" pendant 1.2s avec une easing ease-in-out et forwards (l'animation se termine à la dernière frame)
+    animation: display 1.2s forwards ease-in-out; 
   }
+  
   // Styles pour la troisième variation de l'élément
   &_three {
-    opacity: 1; // Opacité initiale à 1
-    animation: display 1.5s forwards ease-in-out; // Animation de "display" pendant 1.5s
+    // Définition de l'opacité initiale à 1
+    opacity: 1; 
+    // Définition de l'animation "display" pendant 1.5s avec une easing ease-in-out et forwards (l'animation se termine à la dernière frame)
+    animation: display 1.5s forwards ease-in-out; 
   }
 }
 
 // Définition de l'animation "display" avec des keyframes
 @keyframes display {
-  // État initial de l'animation
+  // État initial de l'animation (0%)
   0% {
-    opacity: 0%; // Opacité à 0%
-    transform: translateY(30px); // Translation vers le bas de 30px
+    // Définition de l'opacité à 0% (l'élément est invisible)
+    opacity: 0%; 
+    // Définition de la translation verticale de 30px (l'élément est déplacé vers le bas de 30px)
+    transform: translateY(30px); 
   }
-  // État final de l'animation
+  
+  // État final de l'animation (100%)
   100% {
-    opacity: 100%; // Opacité à 100%
-    transform: translateY(0px); // Aucune translation verticale
+    // Définition de l'opacité à 100% (l'élément est visible)
+    opacity: 100%; 
+    // Définition de la translation verticale à 0px (l'élément est à sa position initiale)
+    transform: translateY(0px); 
   }
 }
