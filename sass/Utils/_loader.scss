@@ -1,63 +1,84 @@
+// Styles pour l'élément avec la classe "loader"
 .loader {
-    // Positionne l'animation de chargement en plein écran
-    position: fixed;
-    height: 100%;
-    width: 100%;
+  // Positionne l'élément en plein écran
+  position: fixed;
+  // Définition de la hauteur à 100% de la hauteur de l'écran
+  height: 100%;
+  // Définition de la largeur à 100% de la largeur de l'écran
+  width: 100%;
+  // Définition de l'indice de pile à 1000 (l'élément est au-dessus de tous les autres éléments)
+  z-index: 1000;
+  // Définition de la couleur de fond à un blanc semi-transparent (#ffffffc9)
+  background-color: #ffffffc9;
+  // Définition de la propriété display à flex pour centrer l'élément
+  display: flex;
+  // Définition de la justification du contenu à center pour centrer l'élément
+  justify-content: center;
+  // Définition de l'alignement des éléments à center pour centrer l'élément
+  align-items: center;
+  
+  // Définition de l'animation "loader" qui dure 0,5 seconde avec une easing en douceur
+  animation: loader 0.5s ease-out;
+  // Définition du délai d'attente avant de lancer l'animation à 1,2 seconde
+  animation-delay: 1.2s;
+  // Définition du mode de remplissage de l'animation à both (l'animation est jouée à la fois en avant et en arrière)
+  animation-fill-mode: both;
+  
+  // Styles pour l'élément de chargement
+  &-item {
+    // Ajout de bordures à l'élément de chargement
+    border: 10px solid $color-grey;
+    // Définition de la bordure supérieure à 10px solide de la couleur secondaire
+    border-top: 10px solid $color-secondary;
+    // Définition de la bordure inférieure à 10px solide de la couleur secondaire
+    border-bottom: 10px solid $color-secondary;
+    // Définition du rayon de courbure à 50% pour créer un cercle
+    border-radius: 50%;
+    // Définition de la largeur à 100px
+    width: 100px;
+    // Définition de la hauteur à 100px
+    height: 100px;
+    
+    // Définition de l'animation "spin" qui dure 1,2 seconde avec une easing linéaire et qui se répète à l'infini
+    animation: spin 1.2s linear infinite;
+  }
+}
+
+// Définition de l'animation "loader"
+@keyframes loader {
+  // État initial de l'animation (0%)
+  0% {
+    // Définition de l'opacité à 1 au début de l'animation
+    opacity: 1;
+  }
+  // État intermédiaire de l'animation (50%)
+  50% {
+    // Définition de l'opacité à 0,5 à la moitié de l'animation
+    opacity: 0.5;
+  }
+  // État final de l'animation (99%)
+  99% {
+    // Définition de l'indice de pile à 1000 à la fin de l'animation
     z-index: 1000;
-    background-color: #ffffffc9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    // Définit l'animation loader qui dure 0,5 secondes avec une transition en douceur
-    animation: loader 0.5s ease-out;
-    animation-delay: 1.2s;
-    animation-fill-mode: both;
-  
-    // Styles pour l'élément de chargement
-    &-item {
-      // Ajoute des bordures et une taille à l'élément de chargement
-      border: 10px solid $color-grey;
-      border-top: 10px solid $color-secondary;
-      border-bottom: 10px solid $color-secondary;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-  
-      // Définit l'animation spin qui dure 1,2 secondes avec une transition linéaire
-      animation: spin 1.2s linear infinite;
-    }
   }
-  
-  // Définit l'animation loader
-  @keyframes loader {
-    0% {
-      // Définit l'opacité à 1 au début de l'animation
-      opacity: 1;
-    }
-    50% {
-      // Définit l'opacité à 0,5 à la moitié de l'animation
-      opacity: 0.5;
-    }
-    99% {
-      // Définit l'indice de pile à 1000 à la fin de l'animation
-      z-index: 1000;
-    }
-    100% {
-      // Définit l'opacité à 0 et l'indice de pile à -1000 à la fin de l'animation
-      opacity: 0;
-      z-index: -1000;
-    }
+  // État final de l'animation (100%)
+  100% {
+    // Définition de l'opacité à 0 et de l'indice de pile à -1000 à la fin de l'animation
+    opacity: 0;
+    z-index: -1000;
   }
-  
-  // Définit l'animation spin
-  @keyframes spin {
-    0% {
-      // Définit la rotation à 0 degré au début de l'animation
-      transform: rotate(0deg);
-    }
-    100% {
-      // Définit la rotation à 360 degré à la fin de l'animation
-      transform: rotate(360deg);
-    }
+}
+
+// Définition de l'animation "spin"
+@keyframes spin {
+  // État initial de l'animation (0%)
+  0% {
+    // Définition de la rotation à 0 degré au début de l'animation
+    transform: rotate(0deg);
   }
+  // État final de l'animation (100%)
+  100% {
+    // Définition de la rotation à 360 degrés à la fin de l'animation
+    transform: rotate(360deg);
+  }
+}
