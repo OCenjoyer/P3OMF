@@ -16,9 +16,12 @@
   }
   
   // Styles pour les paragraphes à l'intérieur de ".footer"
-  & p {
-    margin: 0; // Supprime les marges extérieures
-    margin-left: 3%; // Ajoute une marge à gauche
+  p {
+    white-space: nowrap;
+  }
+
+  i {
+    margin-right: 0.5rem; // Ajoute un espace de 0.5rem entre l'icône et le texte
   }
   
   // Styles pour les liens à l'intérieur de ".footer"
@@ -32,7 +35,8 @@
   
   // Styles pour la section de texte "__txt" à l'intérieur de ".footer"
   &__txt {
-    display: flex; // Utilise flexbox pour organiser les éléments enfants
+    display: flex;
+    align-items: center;
   }
   
   // Styles pour la section de liens "__links" à l'intérieur de ".footer"
