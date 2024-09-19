@@ -1,44 +1,57 @@
+<!-- Définition du document HTML -->
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Méta-informations du document -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/cd052b35bf.js"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Chargement de Font Awesome -->
+    <script src="https://kit.fontawesome.com/cd052b35bf.js" crossorigin="anonymous"></script>
+    <!-- Titre de la page -->
     <title>OhMyFood</title>
+    <!-- Fichier de style CSS -->
     <link rel="stylesheet" href="/style.css" />
   </head>
+
+  <!-- Corps du document -->
   <body>
+    <!-- Loader animation -->
     <div class="loader">
       <div class="loader-item"></div>
-  </div>
+    </div>
+    
+    <!-- Contenu principal -->
     <main>
+      <!-- En-tête de la page -->
       <header>
+        <!-- Informations de la page -->
         <div>
-          <div>
-            <h1 class="title">ohmyfood</h1>
-          </div>
+          <!-- Titre de la page -->
+          <h1 class="title">ohmyfood</h1>
+          <!-- Adresse de la ville -->
           <div class="city">
             <i class="fas fa-map-marker-alt"></i>
             <h1 class="paname">Paris, Belleville</h1>
           </div>
         </div>
       </header>
+      
+      <!-- Section 1: Informations -->
       <section>
+        <!-- Informations sur les restaurants -->
         <div class="info">
-          <h2>Réservez le menu qui <br />vous convient</h2>
-          <p>
-            Découvrez des restaurants d'exception, séléctionnés par nos soins
-          </p>
+          <h2>Réservez le menu qui vous convient</h2>
+          <p>Découvrez des restaurants d'exception, séléctionnés par nos soins</p>
           <div>
             <button>Explorer nos restaurants</button>
           </div>
         </div>
       </section>
+      
+      <!-- Section 2: Fonctionnement -->
       <section class="marge">
+        <!-- Étapes du fonctionnement -->
         <div class="fonctionnement">
           <h2>Fonctionnement</h2>
           <ol>
@@ -48,9 +61,13 @@
           </ol>
         </div>
       </section>
+      
+      <!-- Section 3: Restaurants -->
       <section class="restaurants">
+        <!-- Liste des restaurants -->
         <h2>Restaurants</h2>
         <div class="restaurants__cards">
+          <!-- Carte 1: La palette du goût -->
           <a href="pages/la_palette_du_gout.html" class="card new">
             <div class="card__image1"></div>
             <div class="card__description">
@@ -60,6 +77,8 @@
               <i class="fas fa-heart"></i>
             </div>
           </a>
+          
+          <!-- Carte 2: La note enchantée -->
           <a href="pages/la_note_enchantee.html" class="card new">
             <div class="card__image2"></div>
             <div class="card__description">
@@ -69,6 +88,8 @@
               <i class="fas fa-heart"></i>
             </div>
           </a>
+          
+          <!-- Carte 3: À la française -->
           <a href="pages/a_la_francaise.html" class="card">
             <div class="card__image3"></div>
             <div class="card__description">
@@ -78,6 +99,8 @@
               <i class="fas fa-heart"></i>
             </div>
           </a>
+          
+          <!-- Carte 4: Le délice des sens -->
           <a href="pages/le_delice_des_sens.html" class="card">
             <div class="card__image4"></div>
             <div class="card__description">
@@ -89,10 +112,14 @@
           </a>
         </div>
       </section>
+      
+      <!-- Pied de page -->
       <footer>
+        <!-- Informations du pied de page -->
         <div class="footer">
           <h2>ohmyfood</h2>
           <div class="links">
+            <!-- Liens du pied de page -->
             <div class="footer__links">
               <a href="#" class="footer__txt">
                 <i class="fa-solid fa-utensils"></i>
