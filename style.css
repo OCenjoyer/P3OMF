@@ -46,8 +46,8 @@ a {
 
 .info {
   display: flex;
-  text-align: center;
   flex-direction: column;
+  text-align: center;
   background-color: #f2f2f2;
   padding-bottom: 4rem;
   margin-bottom: 0;
@@ -276,7 +276,7 @@ a {
 }
 .restaurants .card i {
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.5rem;
   right: 1rem;
   top: 10%;
 }

@@ -1,30 +1,67 @@
-@import "../Utils/variables"; // Importe un fichier de variables contenant des couleurs, des tailles de police, etc.
-@import "../Utils/mixins"; // Importe un fichier de mixins contenant des règles réutilisables
+// Importe le fichier de variables contenant des couleurs, des tailles de police, etc.
+@import "../Utils/variables";
 
+// Importe le fichier de mixins contenant des règles réutilisables
+@import "../Utils/mixins";
+
+// Styles pour les éléments avec la classe "info"
 .info {
+  // Utilise flexbox pour organiser les éléments enfants en colonne
   display: flex;
-  text-align: center;
   flex-direction: column;
+
+  // Centre le texte horizontallement
+  text-align: center;
+
+  // Couleur de fond gris
   background-color: $color-grey;
+
+  // Ajoute un remplissage inférieur
   padding-bottom: 4rem;
-  margin-bottom: 0; // Réduire l'espace
-  & h1 { // Sélectionne les balises h1 à l'intérieur de .info
-    margin-top: 2rem; // Ajoute un espacement en haut de 2 rem
-    margin-bottom: 0; // Supprime l'espacement en bas
-    font-size: 1.6rem; // Définit la taille de police à 1.6 rem
+
+  // Supprime la marge inférieure
+  margin-bottom: 0;
+
+  // Styles pour les éléments h1 à l'intérieur de ".info"
+  & h1 {
+    // Ajoute un espace en haut de 2rem
+    margin-top: 2rem;
+
+    // Supprime l'espace en bas
+    margin-bottom: 0;
+
+    // Définit la taille de la police à 1.6rem
+    font-size: 1.6rem;
   }
+
+  // Styles pour les éléments p à l'intérieur de ".info"
   & p {
+    // Définit la taille de la police à 1rem
     font-size: 1rem;
+
+    // Ajoute une marge gauche et droite de 5%
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 2rem; // Réduire la marge inférieure
+
+    // Ajoute un espace en bas de 2rem
+    margin-bottom: 2rem;
   }
+
+  // Styles pour les éléments button à l'intérieur de ".info"
   & button {
+    // Applique la mixin "button" pour définir les styles du bouton
     @include button;
+
+    // Applique la mixin "box-shadow" pour ajouter une ombre portée
     @include box-shadow;
-    margin-top: 0; // Réduire la marge supérieure
+
+    // Supprime la marge supérieure
+    margin-top: 0;
   }
-  & button:hover { // Sélectionne les boutons au survol à l'intérieur de .info
-    @include hover-button; // Utilise la mixin hover-button pour appliquer des styles au survol
+
+  // Styles pour les éléments button au survol à l'intérieur de ".info"
+  & button:hover {
+    // Applique la mixin "hover-button" pour définir les styles du bouton au survol
+    @include hover-button;
   }
 }
