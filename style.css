@@ -50,6 +50,7 @@ a {
   flex-direction: column;
   background-color: #f2f2f2;
   padding-bottom: 4rem;
+  margin-bottom: 0;
 }
 .info h1 {
   margin-top: 2rem;
@@ -60,7 +61,7 @@ a {
   font-size: 1rem;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 2rem;
 }
 .info button {
   color: white;
@@ -73,11 +74,7 @@ a {
   margin-right: 15%;
   transition: all 0.2s;
   box-shadow: 0px 6px 13px 0px #bebebe;
-}
-@media (min-width: 995px) {
-  .info button {
-    width: 25%;
-  }
+  margin-top: 0;
 }
 .info button:hover {
   opacity: 0.8;
@@ -165,7 +162,7 @@ a {
   height: 2rem;
   width: 5rem;
   background-color: #99e2d0;
-  color: #2c9c81;
+  color: rgb(44.3854961832, 156.1145038168, 128.5648854962);
   font-weight: bold;
   right: 1rem;
   top: 1rem;
@@ -279,7 +276,7 @@ a {
 }
 .restaurants .card i {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 2rem;
   right: 1rem;
   top: 10%;
 }

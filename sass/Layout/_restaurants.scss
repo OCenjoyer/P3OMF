@@ -1,106 +1,81 @@
-// Styles pour la section des restaurants
 .restaurants {
-  background-color: $color-grey; // Couleur de fond grise
-  
-  // Styles pour les titres de niveau 2 à l'intérieur de ".restaurants"
-  & h2 {
-    padding-left: 5%; // Ajoute un remplissage à gauche
-    padding-top: 3rem; // Ajoute un remplissage en haut
-    margin-top: 4rem; // Ajoute une marge en haut
-    margin-bottom: 1rem; // Ajoute une marge en bas
-  }
-  
-  // Styles pour les titres de niveau 3 et les paragraphes à l'intérieur de ".restaurants"
-  & h3,
-  p {
-    font-size: 1rem; // Taille de la police
-    margin: 0; // Supprime les marges extérieures
-  }
-  
-  // Styles pour les nouveaux restaurants
-  .new {
-    position: relative; // Position relative pour positionner l'élément enfant de manière absolue
-    
-    // Styles pour le pseudo-élément ::before de ".new"
-    &::before {
-      display: flex; // Utilise flexbox pour aligner et centrer le contenu
-      align-items: center; // Centre le contenu verticalement
-      justify-content: center; // Centre le contenu horizontalement
-      content: "Nouveau"; // Contenu du pseudo-élément
-      position: absolute; // Position absolue par rapport à l'élément parent
-      height: 2rem; // Hauteur
-      width: 5rem; // Largeur
-      background-color: $color-tertiary; // Couleur de fond
-      color: darken($color-tertiary, 35%); // Couleur du texte légèrement assombrie
-      font-weight: bold; // Police en gras
-      right: 1rem; // Position à droite
-      top: 1rem; // Position en haut
+    background-color: $color-grey;
+    & h2 {
+      padding-left: 5%;
+      padding-top: 3rem;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
     }
-  }
-  
-  // Styles pour la section de cartes "__cards" à l'intérieur de ".restaurants"
-  &__cards {
-    display: flex; // Utilise flexbox pour organiser les éléments enfants
-    align-items: center; // Centre les éléments verticalement
-    flex-direction: column; // Organise les éléments en colonne
-    gap: 1rem; // Espacement entre les éléments
-    padding-left: 5%; // Ajoute un remplissage à gauche
-    padding-right: 5%; // Ajoute un remplissage à droite
-    padding-bottom: 4rem; // Ajoute un remplissage en bas
-    
-    // Media query pour les écrans de taille supérieure ou égale à 994px
-    @media (min-width: 994px) {
-      flex-direction: row; // Organise les éléments en ligne
-      justify-content: space-between; // Répartit uniformément l'espace horizontal
+    & h3,
+    p {
+      font-size: 1rem;
+      margin: 0;
     }
-  }
-  
-  // Styles pour les cartes de restaurant ".card" à l'intérieur de ".restaurants"
-  .card {
-    display: flex; // Utilise flexbox pour organiser les éléments enfants
-    flex-direction: column; // Organise les éléments en colonne
-    width: 100%; // Largeur à 100%
-    height: 15rem; // Hauteur fixe
-    border-radius: 20px; // Bord arrondi
-    background-color: $color-white; // Couleur de fond blanche
-    transition: all 200ms; // Transition fluide de tous les changements pendant 200ms
-    @include box-shadow; // Inclut l'ombre portée définie dans les mixins
-    
-    // Boucle pour générer les styles spécifiques pour chaque image de carte
-    @for $i from 1 through 4 {
-      &__image#{$i} {
-        @include cards-size; // Inclut les styles de taille de carte définis dans les mixins
-        background-image: url(../../images/restaurants/image#{$i}.jpg); // Définit l'image de fond
+    .new {
+      position: relative;
+      &::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: "Nouveau";
+        position: absolute;
+        height: 2rem;
+        width: 5rem;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 35%);
+        font-weight: bold;
+        right: 1rem;
+        top: 1rem;
       }
-      
-      // Media query pour les écrans de taille supérieure ou égale à 994px
+    }
+    &__cards {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 4rem;
       @media (min-width: 994px) {
-        display: flex; // Utilise flexbox pour organiser les éléments enfants
-        width: 400px; // Largeur fixe à 400px
-      }
-      
-      // Styles au survol de la carte
-      &:hover {
-        @include hover; // Inclut les styles de survol définis dans les mixins
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
-    
-    // Styles pour la description à l'intérieur de ".card"
-    &__description {
-      position: relative; // Position relative pour positionner les icônes de manière absolue
-      color: $color-black; // Couleur du texte en noir
-      margin: 0.5rem; // Ajoute une marge
-      margin-left: 1rem; // Ajoute une marge à gauche
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 15rem;
+      border-radius: 20px;
+      background-color: $color-white;
+      transition: all 200ms;
+      @include box-shadow;
+  
+      @for $i from 1 through 4 {
+        &__image#{$i} {
+          @include cards-size;
+          background-image: url(../../images/restaurants/image#{$i}.jpg);
+        }
+        @media (min-width: 994px) {
+          display: flex;
+          width: 400px;
+        }
+        &:hover {
+          @include hover;
+        }
+      }
+      &__description {
+        position: relative;
+        color: $color-black;
+        margin: 0.5rem;
+        margin-left: 1rem;
+      }
+      i {
+        position: absolute;
+        font-size: 2rem;
+        right: 1rem;
+        top: 10%;
+      }
+      @include heart;
     }
-    
-    // Styles pour les icônes à l'intérieur de ".card"
-    i {
-      position: absolute; // Position absolue par rapport à l'élément parent
-      font-size: 1.5rem; // Taille de la police
-      right: 1rem; // Position à droite
-      top: 10%; // Position en haut
-    }
-    
-    @include heart; // Inclut les styles d'icône de cœur définis dans les mixins
   }
-}
