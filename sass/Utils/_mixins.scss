@@ -1,63 +1,129 @@
 // Mixin pour appliquer une ombre portée
 @mixin box-shadow {
+  // Définition de l'ombre portée avec les valeurs suivantes :
+  // 0px pour la distance horizontale
+  // 6px pour la distance verticale
+  // 13px pour la taille de l'ombre
+  // 0px pour la taille de la bordure
+  // #bebebe pour la couleur de l'ombre
   box-shadow: 0px 6px 13px 0px #bebebe;
 }
 
 // Mixin pour les styles de base des boutons
 @mixin button {
-  color: $color-white; // Couleur du texte
-  background-image: linear-gradient(to top, $color-primary, $color-secondary); // Dégradé de fond
-  font-size: 1rem; // Taille de la police
-  border: none; // Pas de bordure
-  padding: 1rem 2rem; // Espacement intérieur
-  border-radius: 2rem; // Bordures arrondies
-  margin-left: 15%; // Marge gauche
-  margin-right: 15%; // Marge droite
-  transition: all 0.2s; // Animation de transition
+  // Définition de la couleur du texte à $color-white
+  color: $color-white;
+  
+  // Définition du dégradé de fond avec les couleurs $color-primary et $color-secondary
+  background-image: linear-gradient(to top, $color-primary, $color-secondary);
+  
+  // Définition de la taille de la police à 1rem
+  font-size: 1rem;
+  
+  // Définition de la bordure à none (aucune bordure)
+  border: none;
+  
+  // Définition de l'espacement intérieur à 1rem pour la marge gauche et 2rem pour la marge droite
+  padding: 1rem 2rem;
+  
+  // Définition de la bordure arrondie à 2rem
+  border-radius: 2rem;
+  
+  // Définition de la marge gauche à 15%
+  margin-left: 15%;
+  
+  // Définition de la marge droite à 15%
+  margin-right: 15%;
+  
+  // Définition de l'animation de transition pour tous les éléments avec une durée de 0,2 seconde
+  transition: all 0.2s;
 }
 
 // Mixin pour les styles de survol généraux
 @mixin hover {
-  transform: scale(1.05); // Mise à l'échelle
-  opacity: 0.9; // Opacité réduite
-  cursor: pointer; // Curseur pointer
+  // Définition de la mise à l'échelle à 1,05 (légère augmentation de taille)
+  transform: scale(1.05);
+  
+  // Définition de l'opacité à 0,9 (légère réduction de l'opacité)
+  opacity: 0.9;
+  
+  // Définition du curseur à pointer (curseur de souris en forme de main)
+  cursor: pointer;
 }
 
 // Mixin pour les styles de survol des boutons
 @mixin hover-button {
-  opacity: 0.8; // Opacité réduite
-  cursor: pointer; // Curseur pointer
-  box-shadow: 0px 6px 13px 0px #4d4c4c; // Autre ombre portée
+  // Définition de l'opacité à 0,8 (réduction de l'opacité)
+  opacity: 0.8;
+  
+  // Définition du curseur à pointer (curseur de souris en forme de main)
+  cursor: pointer;
+  
+  // Définition de l'ombre portée avec les valeurs suivantes :
+  // 0px pour la distance horizontale
+  // 6px pour la distance verticale
+  // 13px pour la taille de l'ombre
+  // 0px pour la taille de la bordure
+  // #4d4c4c pour la couleur de l'ombre
+  box-shadow: 0px 6px 13px 0px #4d4c4c;
 }
 
 // Mixin pour définir les dimensions et les styles des cartes
 @mixin cards-size {
-  height: 75%; // Hauteur
-  width: 100%; // Largeur
-  border-radius: 20px 20px 0px 0px; // Bordures arrondies spécifiques
-  background-size: cover; // Taille du fond couvrant
-  background-position: center; // Position du fond au centre
+  // Définition de la hauteur à 75%
+  height: 75%;
+  
+  // Définition de la largeur à 100%
+  width: 100%;
+  
+  // Définition de la bordure arrondie à 20px pour les coins supérieurs et 0px pour les coins inférieurs
+  border-radius: 20px 20px 0px 0px;
+  
+  // Définition de la taille du fond à cover (le fond couvre tout l'espace disponible)
+  background-size: cover;
+  
+  // Définition de la position du fond à center (le fond est centré)
+  background-position: center;
 }
 
 // Mixin pour ajouter une bordure inférieure
 @mixin underline {
+  // Sélection de l'élément span enfant
   & > span {
-    border-bottom: 3px solid $color-tertiary; // Bordure inférieure
+    // Définition de la bordure inférieure à 3px solide de la couleur $color-tertiary
+    border-bottom: 3px solid $color-tertiary;
   }
 }
 
 // Mixin pour créer un effet de cœur lors du survol
 @mixin heart {
+  // Sélection de l'élément fas (Font Awesome)
   .fas {
-    opacity: 0; // Opacité initiale
-    color: transparent; // Couleur transparente
-    background-image: linear-gradient(to bottom, $color-primary, $color-secondary); // Dégradé de fond
-    background-clip: text; // Clip sur le texte
-    -webkit-background-clip: text; // Clip sur le texte pour les navigateurs WebKit
-    transition: all 200ms ease-in-out; // Animation de transition
+    // Définition de l'opacité initiale à 0 (l'élément est invisible)
+    opacity: 0;
+    
+    // Définition de la couleur à transparent (la couleur est transparente)
+    color: transparent;
+    
+    // Définition du dégradé de fond avec les couleurs $color-primary et $color-secondary
+    background-image: linear-gradient(to bottom, $color-primary, $color-secondary);
+    
+    // Définition du clip sur le texte (le dégradé de fond est appliqué au texte)
+    background-clip: text;
+    
+    // Définition du clip sur le texte pour les navigateurs WebKit
+    -webkit-background-clip: text;
+    
+    // Définition de l'animation de transition pour tous les éléments avec une durée de 200ms et une easing ease-in-out
+    transition: all 200ms ease-in-out;
+    
+    // Définition des styles pour l'état de survol
     &:hover {
-      opacity: 1; // Opacité totale lors du survol
-      transform: scale(1.1); // Mise à l'échelle légèrement augmentée lors du survol
+      // Définition de l'opacité à 1 (l'élément est visible)
+      opacity: 1;
+      
+      // Définition de la mise à l'échelle à 1,1 (légère augmentation de taille)
+      transform: scale(1.1);
     }
   }
 }
