@@ -142,11 +142,20 @@
       @media (max-width: 390px) {
         justify-content: normal;
       }
+      // Définition de l'animation de check lors du survol
       &:hover .check {
-        opacity: 1;
-        transform: translateX(-100%);
-        @media (max-width: 994px) {
-          transform: translateX(-20%);
+      // Définition de l'opacité à 1 (l'élément est visible)
+      opacity: 1;
+  
+      // Définition de la translation horizontale à -100% (l'élément est déplacé vers la gauche)
+      // Cela fait apparaître le check en déplaçant l'élément vers la gauche
+      transform: translateX(-100%);
+  
+      // Média query pour les écrans de largeur inférieure à 994px
+      @media (max-width: 994px) {
+      // Définition de la translation horizontale à -20% (l'élément est déplacé vers la gauche)
+      // Cela ajuste la position du check pour les écrans plus petits
+      transform: translateX(-20%);
         }
       }
       &:hover .prix {
@@ -187,8 +196,11 @@
           width: 10rem;
         }
       }
+      // Définition de l'animation de rotation du check icon lors du survol
       &:hover .check_icon {
-        transform: rotate(360deg);
+      // Définition de la rotation à 360 degrés (l'élément est tourné sur lui-même)
+      // Cela crée un effet de rotation pour le check icon lors du survol
+      transform: rotate(360deg);
       }
       @media (min-width: 994px) {
         padding: 1rem;
@@ -313,19 +325,38 @@
     flex-direction: column;
   }
 }
+// Définition des styles pour le bouton de commande
 .button {
+  // Définition de la couleur de fond à $color-grey
   background-color: $color-grey;
+  
+  // Utilisation de flexbox pour centrer le contenu
   display: flex;
   justify-content: center;
+  
+  // Ajout d'un remplissage inférieur pour espacer le bouton du bas de la page
   padding-bottom: 4rem;
+  
+  // Définition des styles pour le bouton à l'intérieur de .button
   & button {
+    // Définition de la couleur de fond à $color-grey
     background-color: $color-grey;
+    
+    // Définition de la largeur du bouton à 12rem
     width: 12rem;
+    
+    // Inclusion de la mixin button pour définir les styles du bouton
     @include button;
+    
+    // Définition des styles pour le bouton au survol
     &:hover {
+      // Inclusion de la mixin hover-button pour définir les styles du bouton au survol
       @include hover-button;
     }
+    
+    // Média query pour les écrans de largeur supérieure à 994px
     @media (min-width: 994px) {
+      // Définition de la largeur du bouton à 25% de la largeur de l'écran
       width: 25%;
     }
   }
@@ -375,39 +406,68 @@
     left: 1rem;
   }
 }
+// Définition des styles pour l'élément de check
 .check {
+  // Positionnement absolu pour permettre la superposition avec d'autres éléments
   position: absolute;
+  
+  // Opacité initiale à 0 pour rendre l'élément invisible
   opacity: 0;
+  
+  // Positionnement horizontal à 28.1rem pour aligner l'élément avec d'autres éléments
   left: 28.1rem;
+  
+  // Positionnement vertical à 0rem pour aligner l'élément avec d'autres éléments
   top: 0rem;
+  
+  // Hauteur de l'élément à 3.5rem pour définir sa taille
   height: 3.5rem;
+  
+  // Définition de l'overflow à hidden pour cacher le contenu qui dépasse de l'élément
   overflow: hidden;
+  
+  // Ajout d'un remplissage intérieur de 1rem pour espacer le contenu de l'élément
   padding: 1rem;
+  
+  // Définition de la couleur de fond à $color-tertiary pour donner une couleur spécifique à l'élément
   background-color: $color-tertiary;
+  
+  // Définition des bordures arrondies pour donner un aspect visuel à l'élément
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  
+  // Définition de la transition pour les propriétés de l'élément pour créer un effet de transition
   transition: all 300ms;
+  
+  // Média queries pour ajuster les styles en fonction de la largeur de l'écran
   @media (max-width: 1590px) {
+    // Ajout d'un remplissage gauche de 1rem pour ajuster l'espacement
     padding-left: 1rem;
   }
   @media (max-width: 1440px) {
+    // Ajustement de la position horizontale à 22.6rem
     left: 22.6rem;
   }
   @media (max-width: 1366px) {
+    // Ajustement de la position horizontale à 22rem
     left: 22rem;
   }
   @media (max-width: 1280px) {
+    // Ajustement de la position horizontale à 21rem
     left: 21rem;
   }
   @media (max-width: 1100px) {
+    // Ajout d'un remplissage gauche de 1rem et d'une marge droite de 5rem pour ajuster l'espacement
     padding-left: 1rem;
     margin-right: 5rem;
   }
   @media (max-width: 1024px) {
+    // Ajustement de la position horizontale à 18rem et suppression de la marge droite
     left: 18rem;
     margin-right: 0;
   }
   @media (max-width: 994px) {
+    // Suppression de la marge et ajustement de la position horizontale à 54rem
     margin: 0;
     left: 54rem;
     top: 0rem;
@@ -415,60 +475,92 @@
     padding-left: 1.5rem;
   }
   @media (max-width: 768px) {
+    // Ajustement de la position horizontale à 41rem et de la hauteur à 2.7rem
     left: 41rem;
     height: 2.7rem;
     padding-left: 1.3rem;
   }
   @media (max-width: 745px) {
+    // Ajout d'un remplissage de 1rem et ajustement de la hauteur à 2.7rem
     padding: 1rem;
     height: 2.7rem;
   }
   @media (max-width: 425px) {
+    // Ajustement de la position horizontale à 21.5rem et de la hauteur à 2.3rem
     left: 21.5rem;
     height: 2.3rem;
   }
   @media (max-width: 390px) {
+    // Ajustement de la position horizontale à 20rem et de la hauteur à 2.3rem
     left: 20rem;
     height: 2.3rem;
     top: 0rem;
     padding-right: 0.7rem;
   }
   @media (max-width: 375px) {
+    // Ajustement de la position horizontale à 19rem et de la hauteur à 2. 3rem
     left: 19rem;
     height: 2.3rem;
     top: 0rem;
   }
   @media (max-width: 320px) {
+    // Ajustement de la position horizontale à 15.8rem et de la hauteur à 2.2rem
     left: 15.8rem;
     height: 2.2rem;
   }
   @media (max-width: 280px) {
+    // Ajustement de la position horizontale à 13.5rem
     left: 13.5rem;
   }
-  &_icon {
-    width: 18px;
+// Définition des styles pour l'icône de check
+&_icon {
+  // Définition de la largeur de l'icône à 18px
+  width: 18px;
+  
+  // Définition de la marge supérieure de l'icône à 0.8rem
+  margin-top: 0.8rem;
+  
+  // Définition de l'alignement du texte à center pour centrer l'icône
+  text-align: center;
+  
+  // Définition de la couleur de fond de l'icône à $color-white
+  background-color: $color-white;
+  
+  // Définition de la couleur du texte de l'icône à $color-tertiary
+  color: $color-tertiary;
+  
+  // Définition de la bordure arrondie de l'icône à 25px
+  border-radius: 25px;
+  
+  // Définition du remplissage intérieur de l'icône à 0.2rem
+  padding: 0.2rem;
+  
+  // Définition de la bordure de l'icône à 1px solide de couleur $color-white
+  border: 1px solid $color-white;
+  
+  // Définition de la transition pour les propriétés de l'icône pour créer un effet de transition
+  transition: all 0.6s;
+  
+  // Média queries pour ajuster les styles en fonction de la largeur de l'écran
+  @media (max-width: 994px) {
+    // Ajustement de la marge supérieure de l'icône à 0.8rem
     margin-top: 0.8rem;
-    text-align: center;
-    background-color: $color-white;
-    color: $color-tertiary;
-    border-radius: 25px;
-    padding: 0.2rem;
-    border: 1px solid $color-white;
-    transition: all 0.6s;
-    @media (max-width: 994px) {
-      margin-top: 0.8rem;
-    }
-    @media (max-width: 768px) {
-      margin-top: 0.6rem;
-    }
-    @media (max-width: 425px) {
-      margin-top: 0.3rem;
-    }
-    @media (max-width: 390px) {
-      margin-top: 0.3rem;
-    }
-    @media (max-width: 375px) {
-      margin-top: 0.4rem;
+  }
+  @media (max-width: 768px) {
+    // Ajustement de la marge supérieure de l'icône à 0.6rem
+    margin-top: 0.6rem;
+  }
+  @media (max-width: 425px) {
+    // Ajustement de la marge supérieure de l'icône à 0.3rem
+    margin-top: 0.3rem;
+  }
+  @media (max-width: 390px) {
+    // Ajustement de la marge supérieure de l'icône à 0.3rem
+    margin-top: 0.3rem;
+  }
+  @media (max-width: 375px) {
+    // Ajustement de la marge supérieure de l'icône à 0.4rem
+    margin-top: 0.4rem;
     }
   }
 }
