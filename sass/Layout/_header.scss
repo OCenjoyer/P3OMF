@@ -75,4 +75,14 @@
     // Empêche le texte de se diviser sur plusieurs lignes
     white-space: nowrap;
   }
+// Sélectionner les éléments input de type text
+input[type="text"] {
+  // Supprimer la bordure par défaut
+  border: none;
+  
+  // Supprimer la bordure de focus par défaut
+  &:focus {
+    outline: none;
+    }
+  }
 }
