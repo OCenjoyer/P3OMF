@@ -474,6 +474,7 @@ a {
   margin-right: 5%;
   margin-left: 5%;
   margin-bottom: 0;
+  text-align: center;
 }
 @media (max-width: 280px) {
   .menu--header > h2 {
@@ -518,6 +519,11 @@ a {
 .menu--assets > h3 > span {
   border-bottom: 3px solid #99e2d0;
 }
+@media (min-width: 994px) {
+  .menu--assets > h3 {
+    padding-left: 40rem;
+  }
+}
 .menu--grid {
   height: 17rem;
   display: flex;
@@ -527,9 +533,8 @@ a {
 }
 @media (min-width: 994px) {
   .menu--grid {
-    display: flex;
-    height: 8rem;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 .menu--grid .commande {
@@ -541,6 +546,7 @@ a {
   width: auto;
   padding-left: 4%;
   padding-top: 2%;
+  margin-bottom: 15px;
   justify-content: space-around;
   background-color: white;
   border-radius: 15px;

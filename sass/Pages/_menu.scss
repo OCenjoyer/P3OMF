@@ -76,6 +76,7 @@
       margin-right: 5%;
       margin-left: 5%;
       margin-bottom: 0;
+      text-align: center;
       @media (max-width: 280px) {
         font-size: 22px;
       }
@@ -109,6 +110,9 @@
       margin-top: 0;
       margin-bottom: 0;
       @include underline;
+      @media (min-width: 994px) {
+      padding-left: 40rem;;
+      }
     }
   }
   &--grid {
@@ -118,9 +122,8 @@
     justify-content: space-around;
     margin-top: 1rem;
     @media (min-width: 994px) {
-      display: flex;
-      height: 8rem;
-      flex-direction: row;
+      justify-content: center; // Centre les éléments horizontalement
+      align-items: center;
     }
     & .commande {
       white-space: nowrap;
@@ -131,6 +134,7 @@
       width: auto;
       padding-left: 4%;
       padding-top: 2%;
+      margin-bottom: 15px;
       justify-content: space-around;
       background-color: $color-white;
       border-radius: 15px;
