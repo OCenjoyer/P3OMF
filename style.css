@@ -145,6 +145,11 @@ a {
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
+@media (min-width: 994px) {
+  .restaurants h2 {
+    padding-left: 12rem;
+  }
+}
 .restaurants h3,
 .restaurants p {
   font-size: 1rem;
@@ -178,8 +183,16 @@ a {
 }
 @media (min-width: 994px) {
   .restaurants__cards {
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-items: center;
+  }
+}
+@media (min-width: 994px) and (min-width: 64rem) {
+  .restaurants__cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .restaurants .card {
@@ -202,8 +215,13 @@ a {
 }
 @media (min-width: 994px) {
   .restaurants .card {
-    display: flex;
-    width: 400px;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 75%;
   }
 }
 .restaurants .card:hover {
@@ -221,8 +239,13 @@ a {
 }
 @media (min-width: 994px) {
   .restaurants .card {
-    display: flex;
-    width: 400px;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 75%;
   }
 }
 .restaurants .card:hover {
@@ -240,8 +263,13 @@ a {
 }
 @media (min-width: 994px) {
   .restaurants .card {
-    display: flex;
-    width: 400px;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 75%;
   }
 }
 .restaurants .card:hover {
@@ -259,8 +287,13 @@ a {
 }
 @media (min-width: 994px) {
   .restaurants .card {
-    display: flex;
-    width: 400px;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 75%;
   }
 }
 .restaurants .card:hover {

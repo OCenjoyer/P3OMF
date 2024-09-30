@@ -16,6 +16,12 @@
 
     // Définit la marge inférieure à 1rem
     margin-bottom: 1rem;
+
+    // Média query pour les écrans de largeur minimale de 994px
+    @media (min-width: 994px) {
+    // Ajoute un remplissage gauche de 12rem pour les écrans de largeur supérieure à 994px
+    padding-left: 12rem;
+}
   }
 
   // Styles pour les éléments h3 et p à l'intérieur de ".restaurants"
@@ -90,15 +96,30 @@
     // Ajoute un remplissage inférieur de 4rem
     padding-bottom: 4rem;
 
-    // Média query pour les écrans de plus de 994px
+    // Média query pour les écrans de largeur minimale de 994px
     @media (min-width: 994px) {
-      // Définit la direction de flex en ligne
-      flex-direction: row;
-
-      // Justifie le contenu à l'espace disponible
-      justify-content: space-between;
+    // Définit le modèle de disposition des éléments en grille
+    display: grid;
+  
+    // Définit le nombre de colonnes dans la grille (1 colonne par défaut)
+    grid-template-columns: repeat(1, 1fr);
+  
+    // Définit l'espace entre les colonnes (2rem)
+    column-gap: 2rem;
+  
+    // Définit l'espace entre les lignes (2rem)
+    row-gap: 2rem;
+  
+    // Centre les éléments horizontalement dans la grille
+    justify-items: center;
+  
+    // Média query pour les écrans de largeur minimale de 64rem (1280px)
+    @media (min-width:64rem) {
+    // Définit le nombre de colonnes dans la grille (2 colonnes)
+    grid-template-columns: repeat(2, 1fr);
     }
   }
+}
 
   // Styles pour les éléments avec la classe "card"
   .card {
@@ -136,14 +157,29 @@
         background-image: url(../../images/restaurants/image#{$i}.jpg);
       }
 
-      // Média query pour les écrans de plus de 994px
-      @media (min-width: 994px) {
-        // Définit la propriété display en flex
-        display: flex;
-
-        // Définit la largeur à 400px
-        width: 400px;
-      }
+    // Média query pour les écrans de plus de 994px
+    @media (min-width: 994px) {
+    // Définit la couleur de fond en blanc pour les écrans de largeur supérieure à 994px
+    background-color: white;
+  
+    // Définit le rayon de bordure à 1rem pour les écrans de largeur supérieure à 994px
+    border-radius: 1rem;
+  
+    // Définit la position relative pour les écrans de largeur supérieure à 994px
+    position: relative;
+  
+    // Supprime la décoration de texte pour les écrans de largeur supérieure à 994px
+    text-decoration: none;
+  
+    // Hérite de la couleur du texte parent pour les écrans de largeur supérieure à 994px
+    color: inherit;
+  
+    // Définit le type d'affichage en bloc pour les écrans de largeur supérieure à 994px
+    display: block;
+  
+    // Définit la largeur à 75% pour les écrans de largeur supérieure à 994px
+    width: 75%;
+    }
 
       // Styles pour les éléments au survol
       &:hover {
